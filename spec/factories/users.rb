@@ -3,9 +3,9 @@
 FactoryGirl.define do
   factory :user do
     username "sexycougar"
-    encrypted_password "ermagerrrd"
+    password 'password'
     sequence(:email) {|n| "sexy.cougar#{n}@cougar.co"}
-    last_login "2013-12-27"
+    sign_in_count 2
     about_me "I'm old and hot like Madonna"
   end
 end
