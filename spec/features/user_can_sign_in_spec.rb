@@ -30,4 +30,15 @@ feature "A viewer can register to authenticate", %{
     expect(page).to have_content("can't be blank")
   end
 
+    it 'does not sign in when password confimation does not match' do
+    visit '/users/sign_up'
+    fill_in 'Email', with: 'doobee@yahoo.com'
+    fill_in 'Username', with: 'doobs'
+    fill_in 'Password', with: '12345678', match: :prefer_exact
+    fill_in 'Password confirmation', with: '12345675'
+
+    click_button 'Sign up'
+    expect(page).to have_content("doesn't match")
+  end
+
 end
