@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :user do
-    username "sexycougar"
-    encrypted_password "ermagerrrd"
-    email "sexy.cougar@cougar.co"
-    last_login "2013-12-27"
+    sequence(:username) {|n| "sexycougar#{n}"}
+    password 'password'
+    sequence(:email) {|n| "sexy.cougar#{n}@cougar.co"}
+    sign_in_count 2
     about_me "I'm old and hot like Madonna"
   end
 end
