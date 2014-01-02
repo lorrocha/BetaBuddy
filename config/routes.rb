@@ -1,5 +1,8 @@
 BetaBuddy::Application.routes.draw do
+  root to: "welcomes#index"
   devise_for :users
+
+  resources :welcomes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

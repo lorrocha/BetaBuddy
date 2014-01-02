@@ -20,6 +20,7 @@ feature "A viewer can register to authenticate", %{
     fill_in 'Password confirmation', with: '12345678'
 
     click_button 'Sign up'
+    expect(page).to have_content('Welcome, warrior of the pen!')
   end
 
   it 'does not sign in when it does not include all the fields' do
