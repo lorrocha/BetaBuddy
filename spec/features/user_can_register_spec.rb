@@ -12,12 +12,14 @@ feature "A viewer can register to authenticate", %{
     # * Once account is registration, validation/welcome email is sent to email provided
     # * If log in is valid, logs in
 
+  let(:user) {FactoryGirl.create(:user)}
+
   it 'can register' do
     visit '/users/sign_up'
-    fill_in 'Email', with: 'doobee@yahoo.com'
-    fill_in 'Username', with: 'doobs'
-    fill_in 'user_password', with: '12345678'
-    fill_in 'Password confirmation', with: '12345678'
+    fill_in 'Email', with: 'wahoo@weehee.com'
+    fill_in 'Username', with: user.username
+    fill_in 'user_password', with: user.password
+    fill_in 'Password confirmation', with: user.password
 
     click_button 'Sign up'
     expect(page).to have_content('Welcome, warrior of the pen!')
@@ -26,7 +28,6 @@ feature "A viewer can register to authenticate", %{
   context 'it does not register' do
     it 'when it does not include all the fields' do
       visit '/users/sign_up'
-      fill_in 'Email', with: 'doobee@yahoo.com'
       click_button 'Sign up'
 
       expect(page).to have_content("can't be blank")
@@ -34,9 +35,9 @@ feature "A viewer can register to authenticate", %{
 
     it 'when password confimation does not match' do
       visit '/users/sign_up'
-      fill_in 'Email', with: 'doobee@yahoo.com'
-      fill_in 'Username', with: 'doobs'
-      fill_in 'user_password', with: '12345678'
+      fill_in 'Email', with: user.email
+      fill_in 'Username', with: user.username
+      fill_in 'user_password', with: user.password
       fill_in 'Password confirmation', with: '12345675'
 
       click_button 'Sign up'
@@ -44,10 +45,10 @@ feature "A viewer can register to authenticate", %{
     end
 
     it 'when an account has been made with that email already' do
-      account = FactoryGirl.create(:user)
+      FactoryGirl.create(:user)
 
       visit '/users/sign_up'
-      fill_in 'Email', with: account.email
+      fill_in 'Email', with: user.email
       fill_in 'Username', with: 'doobs'
       fill_in 'user_password', with: '12345678'
       fill_in 'Password confirmation', with: '12345678'
