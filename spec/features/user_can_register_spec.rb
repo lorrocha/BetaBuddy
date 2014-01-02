@@ -43,7 +43,7 @@ feature "A viewer can register to authenticate", %{
       expect(page).to have_content("doesn't match")
     end
 
-    it 'does not register if an account has been made with that email already' do
+    it 'when an account has been made with that email already' do
       account = FactoryGirl.create(:user)
 
       visit '/users/sign_up'
