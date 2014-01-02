@@ -29,6 +29,7 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'launchy'
 end
 
 group :development do

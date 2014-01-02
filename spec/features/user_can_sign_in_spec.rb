@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "A viewer can log in and authenticate", %{
+feature "A viewer can register to authenticate", %{
   As a writer
   I want to log in to the BetaBuddy Server
   So that I can get and give feedback on my prose} do
@@ -13,8 +13,21 @@ feature "A viewer can log in and authenticate", %{
     # * If log in is valid, logs in
 
   it 'can find the register page' do
-    visit '/users/new'
-    #start here!
+    visit '/users/sign_up'
+    fill_in 'Email', with: 'doobee@yahoo.com'
+    fill_in 'Username', with: 'doobs'
+    fill_in 'Password', with: '12345678', match: :prefer_exact
+    fill_in 'Password confirmation', with: '12345678'
+
+    click_button 'Sign up'
+  end
+
+  it 'does not sign in when it does not include all the fields' do
+    visit '/users/sign_up'
+    fill_in 'Email', with: 'doobee@yahoo.com'
+    click_button 'Sign up'
+
+    expect(page).to have_content("can't be blank")
   end
 
 end
