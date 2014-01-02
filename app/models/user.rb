@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   has_many :proses, :inverse_of => :user
+
+  def is_admin?
+    role == 'admin'
+  end
 end

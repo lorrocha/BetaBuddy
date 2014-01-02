@@ -7,5 +7,6 @@ FactoryGirl.define do
     sequence(:email) {|n| "sexy.cougar#{n}@cougar.co"}
     sign_in_count 2
     about_me "I'm old and hot like Madonna"
+    role "member"
   end
 end

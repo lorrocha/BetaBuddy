@@ -58,6 +58,4 @@ feature "A viewer can register to authenticate", %{
     end
   end
 
-
-
 end
