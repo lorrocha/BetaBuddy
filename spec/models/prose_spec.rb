@@ -12,17 +12,6 @@ describe Prose do
   it {should have_many(:prose_tags)}
   it {should have_many(:genres)}
 
-  it 'can create a factorygirl prose' do
-    prose = FactoryGirl.create(:prose)
-    expect(prose).to be_kind_of(Prose)
-  end
-
-  it 'can create multiple factorygirl proses' do
-    prose1 = FactoryGirl.create(:prose)
-    prose2 = FactoryGirl.create(:prose)
-    expect(prose1).to_not eql(prose2)
-  end
-
   it 'Should have multiple genres in relationship to it' do
     prose = FactoryGirl.create(:prose)
     genre1 = FactoryGirl.create(:genre)

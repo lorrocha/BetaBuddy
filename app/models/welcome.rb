@@ -1,4 +1,4 @@
-class Welcome < ActiveRecord::Base
+class Welcome
 
   def self.quotes
     [{"Oscar Wilde"=>"Be yourself; everyone else is already taken."},

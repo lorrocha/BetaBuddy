@@ -17,7 +17,7 @@ feature "A viewer can register to authenticate", %{
   it 'can register' do
     visit '/users/sign_up'
     fill_in 'Email', with: 'wahoo@weehee.com'
-    fill_in 'Username', with: user.username
+    fill_in 'Username', with: 'bloop'
     fill_in 'user_password', with: user.password
     fill_in 'Password confirmation', with: user.password
 

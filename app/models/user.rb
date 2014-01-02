@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_format_of :email,
    :with =>/\A[^@\s,]+@[^@\s\.]+\.[a-zA-Z]+\z/
   validates_uniqueness_of :email
+  validates_uniqueness_of :username
 
   has_many :proses, :inverse_of => :user
 end
