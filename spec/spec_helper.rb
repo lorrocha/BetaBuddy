@@ -41,4 +41,6 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   include Devise::TestHelpers
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 end

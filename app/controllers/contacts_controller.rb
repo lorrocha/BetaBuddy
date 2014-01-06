@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
+      ViewerContacts.contact(@contact).deliver
       redirect_to root_path, notice: "Your contact has been submitted! You should hear back shortly."
     else
       render :new
