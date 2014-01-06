@@ -14,9 +14,23 @@ class ContactsController < ApplicationController
     end
   end
 
+  def show
+    authenticate_admin
+    @contact = Contact.find(params[:id])
+  end
+
+  def index
+    authenticate_admin
+    @contacts = Contact.all
+  end
+
   private
 
   def contact_params
     params.require(:contact).permit(:first_name, :last_name, :email, :description, :subject)
+  end
+
+  def authenticate_admin
+    raise ActionController::RoutingError.new('Not Found') unless user_signed_in? && current_user.is_admin?
   end
 end

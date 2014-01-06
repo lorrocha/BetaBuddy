@@ -40,7 +40,7 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-  include Devise::TestHelpers
+  config.include Devise::TestHelpers, :type => :controller
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
 end

@@ -35,4 +35,32 @@ feature 'When a contact is created, staff is notified via email', %q{
     expect(last_email).to have_body_text(desc)
   end
 
+  scenario 'Admins can see an index of contacts' do
+    complaint = FactoryGirl.create(:contact)
+    admin = FactoryGirl.create(:user, role:'admin')
+
+    visit new_user_session_path
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Sign In'
+
+    visit contacts_path
+    expect(page).to have_content(complaint.subject)
+    click_on complaint.subject
+    expect(page).to have_content(complaint.description)
+  end
+
+  scenario 'Normal users cannot see an index of contacts' do
+    complaint = FactoryGirl.create(:contact)
+    user = FactoryGirl.create(:user)
+
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign In'
+
+    visit contacts_path
+    expect(page).to have_content('Not Found')
+  end
+
 end
