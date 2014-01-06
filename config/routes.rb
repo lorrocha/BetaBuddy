@@ -7,7 +7,7 @@ BetaBuddy::Application.routes.draw do
     resources :proses, only: [:show, :index]
   end
 
-  resources :contact, only: [:new, :create, :index, :show], controller:'contacts'
+  resources :contacts, only: [:new, :create, :index, :show]
 
   resources :proses, except: [:show, :index]
 

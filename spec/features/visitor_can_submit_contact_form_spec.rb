@@ -12,7 +12,7 @@ feature 'A visitor to the site can submit a contact form', %q{
   # I must specify a last name
 
   scenario 'A user can submit a valid contact inquiry' do
-    visit '/contact'
+    visit new_contact_path
 
     fill_in "First name", with: 'Lawrence'
     fill_in "Last name", with: 'of Arabia'
@@ -21,6 +21,14 @@ feature 'A visitor to the site can submit a contact form', %q{
     fill_in "Description", with: 'There is too much sand in my shoes. Help.'
     click_button "Submit Contact"
 
+    expect(Contact.all.count).to eql(1)
     expect(page).to have_content('Your contact has been submitted! You should hear back shortly.')
+  end
+
+  scenario 'A user cannot submit a contact inquiry if they dont fill in values' do
+    visit new_contact_path
+    click_button "Submit Contact"
+
+    expect(page).to have_content("can't be blank")
   end
 end
