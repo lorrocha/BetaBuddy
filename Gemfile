@@ -30,6 +30,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'launchy'
+  gem 'email_spec'
 end
 
 group :development do
