@@ -1,0 +1,10 @@
+<div><%= link_to 'Edit', edit_prose_path(@prose)%></div>
+<div>
+  <h1><%= @prose.title %></h1>
+  <%= @prose.user.username %>
+</div>
+
+<div>
+  <%= @prose.description %>
+</div>
+
