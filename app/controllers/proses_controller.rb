@@ -27,7 +27,12 @@ class ProsesController < ApplicationController
   def update
     @prose = Prose.find(params[:id])
     if @prose.update(prose_params)
-      redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "#{@prose.title} has been updated."
+      if current_user == @prose.user
+        # Do something to change the current_state of the prose and update the view hereeee
+        redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "#{@prose.title} has been updated."
+      else
+        redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "Your edits have been submitted. #{@prose.user.username} will be seeing them soon!"
+      end
     else
       render :new
     end

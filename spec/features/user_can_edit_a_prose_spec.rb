@@ -15,16 +15,16 @@ feature 'The owner of a prose can edit his/her prose',%q{
   let(:molly) {FactoryGirl.create(:user)}
   let(:fanfic) {FactoryGirl.create(:prose, user_id:molly.id)}
 
-  def sign_in
+  def sign_in(user)
     visit new_user_session_path
-    fill_in "Email", with: molly.email
-    fill_in "Password", with: molly.password
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
     click_button "Sign In"
   end
 
   context 'The user is the owner of the prose' do
     scenario 'can see the link to edit their prose' do
-      sign_in
+      sign_in(molly)
       visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
 
       expect(page).to have_content(fanfic.description)
@@ -34,7 +34,7 @@ feature 'The owner of a prose can edit his/her prose',%q{
     end
 
     scenario 'can edit their page' do
-      sign_in
+      sign_in(molly)
       visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
       click_on 'Edit'
 
@@ -47,6 +47,27 @@ feature 'The owner of a prose can edit his/her prose',%q{
 
   context 'The user is not the owner of the prose' do
     scenario 'can see the link to beta-read the prose' do
+      sarah = FactoryGirl.create(:user)
+      sign_in(sarah)
+      visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
+
+      expect(page).to have_content(fanfic.description)
+      expect(page).to have_content(fanfic.title)
+      expect(page).to have_content(molly.username)
+      expect(page).to have_content('Beta-Read!')
+    end
+
+    scenario 'can beta-read the prose' do
+      sarah = FactoryGirl.create(:user)
+      sign_in(sarah)
+      visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
+      click_on 'Beta-Read!'
+
+      desc= 'The VERY best story ever! ZOMEGGGG'
+      fill_in "Story", with: desc
+      click_button "Update Prose"
+
+      expect(page).to have_content("Your edits have been submitted. #{molly.username} will be seeing them soon!")
     end
   end
 

@@ -8,4 +8,5 @@ class Prose < ActiveRecord::Base
    :through=>:prose_tags
   belongs_to :user
   has_paper_trail
+
 end

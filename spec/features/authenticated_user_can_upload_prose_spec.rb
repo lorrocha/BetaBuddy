@@ -13,9 +13,9 @@ feature 'Authenticated User Can Upload Prose', %q{
   # * When 'Done' button is pressed, browser is redirected to a page displaying the prose
   # * Save as a markdown file?
 
-  def successful_login
-    user = FactoryGirl.create(:user)
+  let(:user) {FactoryGirl.create(:user)}
 
+  def successful_login
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
@@ -54,6 +54,20 @@ feature 'Authenticated User Can Upload Prose', %q{
       fill_in 'Title', with: 'Weeee'
       click_button 'Create Prose'
       expect(page).to have_content("can't be blank")
+    end
+  end
+
+  context 'New Prose button on the nav bar' do
+    scenario 'appears for authenticated users' do
+      successful_login
+
+      visit root_path
+      expect(page).to have_content('New Story')
+    end
+
+    scenario 'appears for authenticated users' do
+      visit root_path
+      expect(page).to_not have_content('New Story')
     end
   end
 end

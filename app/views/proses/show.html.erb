@@ -1,4 +1,10 @@
-<div><%= link_to 'Edit', edit_prose_path(@prose)%></div>
+<div>
+  <% if current_user == @prose.user %>
+    <%= link_to 'Edit', edit_prose_path(@prose)%>
+  <% else %>
+    <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
+  <% end %>
+</div>
 <div>
   <h1><%= @prose.title %></h1>
   <%= @prose.user.username %>
