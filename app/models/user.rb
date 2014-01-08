@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :username
   validates_presence_of :encrypted_password
-  validates_format_of :email,
-   :with =>/\A[^@\s,]+@[^@\s\.]+\.[a-zA-Z]+\z/
+  validates_presence_of :email
   validates_uniqueness_of :email
   validates_uniqueness_of :username
 

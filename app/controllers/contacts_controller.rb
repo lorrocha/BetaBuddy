@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-
+  before_action :authenticate_admin, only:[:show, :index]
   def new
     @contact = Contact.new
   end
@@ -15,12 +15,10 @@ class ContactsController < ApplicationController
   end
 
   def show
-    authenticate_admin
     @contact = Contact.find(params[:id])
   end
 
   def index
-    authenticate_admin
     @contacts = Contact.all
   end
 

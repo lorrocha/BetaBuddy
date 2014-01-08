@@ -1,5 +1,5 @@
 class ProsesController < ApplicationController
-  before_action :authorize_user, except:[:show, :index]
+  before_filter :authenticate_user!, except:[:show, :index]
 
   def new
       @owner = current_user
@@ -41,10 +41,6 @@ class ProsesController < ApplicationController
 
   def prose_params
     params.require(:prose).permit(:user_id,:title, :description, :current_state)
-  end
-
-  def authorize_user
-    redirect_to new_user_session_path, notice: 'Woops! Gotta sign in, first!' unless user_signed_in?
   end
 
 end

@@ -32,7 +32,7 @@ feature 'Authenticated User Can Upload Prose', %q{
 
     it 'non-authenticated users are prompted to authenticate' do
       visit '/proses/new'
-      expect(page).to have_content('Woops! Gotta sign in, first!')
+      expect(page).to have_content('You need to sign in or sign up before continuing.')
     end
   end
 
