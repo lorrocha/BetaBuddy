@@ -1,13 +1,14 @@
 class ProsesController < ApplicationController
   before_filter :authenticate_user!, except:[:show, :index]
+  before_filter :set_prose, except: [:new, :create, :index]
 
   def index
     @user = User.find(params[:user_id])
   end
 
   def new
-      @owner = current_user
-      @prose = @owner.proses.build
+    @owner = current_user
+    @prose = @owner.proses.build
   end
 
   def create
@@ -21,15 +22,12 @@ class ProsesController < ApplicationController
   end
 
   def show
-    @prose = Prose.find(params[:id])
   end
 
   def edit
-    @prose = Prose.find(params[:id])
   end
 
   def destroy
-    @prose = Prose.find(params[:id])
     if @prose.destroy
       redirect_to user_proses_path(@prose.user), notice: "#{@prose.title} has been deleted."
     else
@@ -38,7 +36,6 @@ class ProsesController < ApplicationController
   end
 
   def update
-    @prose = Prose.find(params[:id])
     if @prose.update(prose_params)
       if current_user == @prose.user
         # Do something to change the current_state of the prose and update the view hereeee
@@ -52,6 +49,10 @@ class ProsesController < ApplicationController
   end
 
   private
+
+  def set_prose
+    @prose = Prose.find(params[:id])
+  end
 
   def set_current_user
     @user = current_user
