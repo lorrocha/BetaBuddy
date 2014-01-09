@@ -7,6 +7,6 @@ class Prose < ActiveRecord::Base
   has_many :genres,
    :through=>:prose_tags
   belongs_to :user
-  has_paper_trail
+  has_paper_trail :on => [:create, :update]
 
 end
