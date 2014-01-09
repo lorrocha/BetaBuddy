@@ -40,7 +40,7 @@ feature 'The owner of a prose can edit his/her prose',%q{
 
       title= 'The VERY best story ever!'
       fill_in "Title", with: title
-      click_button "Update Prose"
+      click_button "Edit Prose"
       expect(page).to have_content(title)
     end
   end
@@ -65,7 +65,7 @@ feature 'The owner of a prose can edit his/her prose',%q{
 
       desc= 'The VERY best story ever! ZOMEGGGG'
       fill_in "Story", with: desc
-      click_button "Update Prose"
+      click_button "Submit Review"
 
       expect(page).to have_content("Your edits have been submitted. #{molly.username} will be seeing them soon!")
     end

@@ -35,10 +35,10 @@ feature 'When a contact is created, staff is notified via email', %q{
     expect(last_email).to have_body_text(desc)
   end
 
+  let!(:complaint) {FactoryGirl.create(:contact)}
+  let(:admin) {FactoryGirl.create(:user, role:'admin')}
+  let(:user) {FactoryGirl.create(:user)}
   scenario 'Admins can see an index of contacts' do
-    complaint = FactoryGirl.create(:contact)
-    admin = FactoryGirl.create(:user, role:'admin')
-
     visit new_user_session_path
     fill_in 'Email', with: admin.email
     fill_in 'Password', with: admin.password
@@ -51,9 +51,6 @@ feature 'When a contact is created, staff is notified via email', %q{
   end
 
   scenario 'Normal users cannot see an index of contacts' do
-    complaint = FactoryGirl.create(:contact)
-    user = FactoryGirl.create(:user)
-
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password

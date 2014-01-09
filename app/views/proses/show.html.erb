@@ -1,6 +1,7 @@
 <div>
   <% if current_user == @prose.user %>
     <%= link_to 'Edit', edit_prose_path(@prose)%>
+    <%= link_to 'Delete', prose_path(@prose), method: :delete%>
   <% else %>
     <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
   <% end %>

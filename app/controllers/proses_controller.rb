@@ -1,6 +1,10 @@
 class ProsesController < ApplicationController
   before_filter :authenticate_user!, except:[:show, :index]
 
+  def index
+    @user = User.find(params[:user_id])
+  end
+
   def new
       @owner = current_user
       @prose = @owner.proses.build
@@ -10,7 +14,7 @@ class ProsesController < ApplicationController
     @owner = current_user
     @prose = @owner.proses.build(prose_params)
     if @prose.save
-      redirect_to user_prose_path(@prose), notice: 'Your ink has been committed to paper.'
+      redirect_to user_prose_path(@prose.user,@prose), notice: 'Your ink has been committed to paper.'
     else
       render :new
     end
@@ -22,6 +26,15 @@ class ProsesController < ApplicationController
 
   def edit
     @prose = Prose.find(params[:id])
+  end
+
+  def destroy
+    @prose = Prose.find(params[:id])
+    if @prose.destroy
+      redirect_to user_proses_path(@prose.user), notice: "#{@prose.title} has been deleted."
+    else
+      redirect_to @prose, notice: "Woops, something went wrong!"
+    end
   end
 
   def update

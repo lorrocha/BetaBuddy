@@ -31,6 +31,7 @@ group :test, :development do
   gem 'better_errors'
   gem 'launchy'
   gem 'email_spec'
+  gem 'binding_of_caller'
 end
 
 group :development do
