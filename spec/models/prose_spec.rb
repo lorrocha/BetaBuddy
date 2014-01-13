@@ -21,4 +21,5 @@ describe Prose do
     ProseTag.create(prose_id:prose.id, genre_id:genre2.id)
     expect(prose.genres.count).to eql(2)
   end
+
 end

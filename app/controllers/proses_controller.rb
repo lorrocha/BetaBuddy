@@ -1,6 +1,6 @@
 class ProsesController < ApplicationController
   before_filter :authenticate_user!, except:[:show, :index]
-  before_filter :set_prose, except: [:new, :create, :index]
+  before_filter :set_prose, except: [:new, :create, :index, :show]
 
   def index
     @user = User.find(params[:user_id])
@@ -22,6 +22,11 @@ class ProsesController < ApplicationController
   end
 
   def show
+    @prose = Prose.find(params[:id])
+
+    #params['prose'].nil? ? version = 1 : version = params['prose']['version'].to_i
+    # this is failing because the version.id is returning, not the version.index. FIIX
+    #@prose ||= @prose.versions[version].reify
   end
 
   def edit
@@ -36,11 +41,13 @@ class ProsesController < ApplicationController
   end
 
   def update
+    original_prose = @prose
     if @prose.update(prose_params)
-      if current_user == @prose.user
-        # Do something to change the current_state of the prose and update the view hereeee
+      if is_owner?
         redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "#{@prose.title} has been updated."
+        @prose.save
       else
+        @prose.save
         redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "Your edits have been submitted. #{@prose.user.username} will be seeing them soon!"
       end
     else
@@ -49,6 +56,9 @@ class ProsesController < ApplicationController
   end
 
   private
+  def is_owner?
+    current_user == @prose.user
+  end
 
   def set_prose
     @prose = Prose.find(params[:id])

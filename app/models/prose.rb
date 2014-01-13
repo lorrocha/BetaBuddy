@@ -7,6 +7,10 @@ class Prose < ActiveRecord::Base
   has_many :genres,
    :through=>:prose_tags
   belongs_to :user
-  has_paper_trail :on => [:create, :update]
+  has_paper_trail :on => [:update, :create]
+
+  def all_versions
+    @work = versions.map {|v| {user_id:v.whodunnit, desc:v.reify.description} unless v.event == 'create'}
+  end
 
 end
