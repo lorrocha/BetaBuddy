@@ -61,7 +61,7 @@ feature 'The owner of a prose can edit his/her prose',%q{
       sarah = FactoryGirl.create(:user)
       sign_in(sarah)
       visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
-      save_and_open_page
+
       click_on 'Beta-Read!'
 
       desc= 'The VERY best story ever! ZOMEGGGG'

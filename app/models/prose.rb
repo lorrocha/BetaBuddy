@@ -13,4 +13,12 @@ class Prose < ActiveRecord::Base
     @work = versions.map {|v| {user_id:v.whodunnit, desc:v.reify.description} unless v.event == 'create'}
   end
 
+  def self.search(params)
+    if params
+      where('description LIKE ? OR title LIKE ?', "%#{params}%", "%#{params}%")
+    else
+      all
+    end
+  end
+
 end

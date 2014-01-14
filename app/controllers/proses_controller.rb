@@ -1,6 +1,6 @@
 class ProsesController < ApplicationController
-  before_filter :authenticate_user!, except:[:show, :index]
-  before_filter :set_prose, except: [:new, :create, :index, :show]
+  before_filter :authenticate_user!, except:[:show, :index, :search]
+  before_filter :set_prose, only: [:show, :edit, :update, :destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -53,6 +53,16 @@ class ProsesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def search
+    if params[:search]
+      search_params = params[:search][:search]
+    else
+      search_params = nil
+    end
+
+    @proses = Prose.search(search_params)
   end
 
   private

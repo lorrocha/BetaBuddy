@@ -22,4 +22,13 @@ describe Prose do
     expect(prose.genres.count).to eql(2)
   end
 
+  it 'can be searched and returned' do
+    Prose.destroy_all
+    tester = 'Dance baby dance!'
+    FactoryGirl.create(:prose)
+    prose = FactoryGirl.create(:prose, description:tester)
+
+    expect(Prose.search(tester).count).to eql(1)
+  end
+
 end

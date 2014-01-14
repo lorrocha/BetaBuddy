@@ -10,7 +10,7 @@ BetaBuddy::Application.routes.draw do
   resources :contacts, only: [:new, :create, :index, :show]
 
   resources :proses, except: [:show, :index]
-
+  get '/search', to: 'proses#search'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
