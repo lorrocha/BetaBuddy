@@ -1,8 +1,5 @@
 == README
 
-
-{<img src="https://coveralls.io/repos/lorrocha/BetaBuddy/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/lorrocha/BetaBuddy]
-
 {<img src="https://coveralls.io/repos/lorrocha/BetaBuddy/badge.png?branch=search-feature" alt="Coverage Status" />}[https://coveralls.io/r/lorrocha/BetaBuddy?branch=search-feature]
 
 
