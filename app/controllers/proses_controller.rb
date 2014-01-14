@@ -61,7 +61,6 @@ class ProsesController < ApplicationController
     else
       search_params = nil
     end
-
     @proses = Prose.search(search_params)
   end
 

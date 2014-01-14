@@ -13,9 +13,9 @@ class Prose < ActiveRecord::Base
     @work = versions.map {|v| {user_id:v.whodunnit, desc:v.reify.description} unless v.event == 'create'}
   end
 
-  def self.search(params)
-    if params
-      where('description LIKE ? OR title LIKE ?', "%#{params}%", "%#{params}%")
+  def self.search(item)
+    if item
+      self.joins('LEFT OUTER JOIN users ON proses.user_id = users.id').where('users.username LIKE ? OR title LIKE ?', "%#{item}%", "%#{item}%")
     else
       all
     end

@@ -6,16 +6,16 @@ feature 'A visitor can search for a specific story', %q{
     So that I can select a prose to beta edit
 } do
 
-  let(:fanfic) {FactoryGirl.create(:prose, description:'hihi', title:'hi')}
+  let!(:molly) {FactoryGirl.create(:user, username:'woopwoop')}
+  let(:fanfic) {FactoryGirl.create(:prose, user_id:molly.id, title:'hi')}
 
-  scenario 'A user can search for a prose by description content' do
+  scenario 'A user can search for a prose by author content' do
     Prose.destroy_all
     fanfic
     FactoryGirl.create(:prose)
-    FactoryGirl.create(:prose)
 
     visit '/search'
-    fill_in 'Search', with: "hihi"
+    fill_in 'Search', with: molly.username
     click_button 'Search'
 
     expect(page).to have_content('hi')
@@ -27,7 +27,7 @@ feature 'A visitor can search for a specific story', %q{
     FactoryGirl.create(:prose)
 
     visit '/search'
-    fill_in 'Search', with: "hihi"
+    fill_in 'Search', with: "hi"
     click_button 'Search'
 
     expect(page).to have_content('hi')

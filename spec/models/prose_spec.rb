@@ -26,7 +26,7 @@ describe Prose do
     Prose.destroy_all
     tester = 'Dance baby dance!'
     FactoryGirl.create(:prose)
-    prose = FactoryGirl.create(:prose, description:tester)
+    prose = FactoryGirl.create(:prose, title:tester)
 
     expect(Prose.search(tester).count).to eql(1)
   end
