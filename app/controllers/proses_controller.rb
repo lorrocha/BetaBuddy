@@ -61,7 +61,7 @@ class ProsesController < ApplicationController
     else
       search_params = nil
     end
-    @proses = Prose.search(search_params)
+    @proses = Prose.search(search_params).paginate(:page => params[:page], :per_page => 20)
   end
 
   private
