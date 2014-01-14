@@ -29,6 +29,9 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'launchy'
+  gem 'email_spec'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -45,6 +48,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'devise'
+
+gem 'simple_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

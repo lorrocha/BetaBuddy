@@ -1,0 +1,5 @@
+<% @contacts.each do |con| %>
+<div>
+  <%= link_to con.subject, contact_path(con) %>
+</div>
+<% end %>
