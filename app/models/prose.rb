@@ -15,7 +15,7 @@ class Prose < ActiveRecord::Base
 
   def self.search(item)
     if item
-      self.joins('LEFT OUTER JOIN users ON proses.user_id = users.id').where('users.username LIKE ? OR title LIKE ?', "%#{item}%", "%#{item}%")
+      joins('LEFT OUTER JOIN users ON proses.user_id = users.id').where('users.username LIKE ? OR title LIKE ?', "%#{item}%", "%#{item}%")
     else
       all
     end
