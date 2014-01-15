@@ -1,18 +1,19 @@
 
-<%= simple_form_for :search, url: search_path, method: :get do |f| %>
+<%= simple_form_for :search, url: search_path, html: { method: :get, id: 'prose_search' } do |f| %>
   <%= f.input :search, :required => false %>
   <%= f.button :submit, "Search" %>
 <% end %>
-
-<% if @proses.empty? %>
-  <div>
-    Sorry, there were no matches.
-  </div>
-<% else %>
-  <% @proses.each do |prose| %>
+<div id="proses_content">
+  <% if @proses.empty? %>
     <div>
-      <%= link_to prose.title, user_prose_path(prose.user ,prose) %>
+      Sorry, there were no matches.
     </div>
+  <% else %>
+    <% @proses.each do |prose| %>
+      <div>
+        <%= link_to prose.title, user_prose_path(prose.user ,prose) %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-<%= will_paginate @proses %>
+  <%= will_paginate @proses %>
+</div>
