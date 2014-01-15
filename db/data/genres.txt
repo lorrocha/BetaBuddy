@@ -1,0 +1,25 @@
+Adventure
+Biography
+Children
+Young Adult
+Fantasy
+Fiction
+NonFiction
+Self Help
+History
+Poetry
+Science Fiction
+Historical Fiction
+Mystery
+Paranormal
+Comedy
+Tragedy
+Romance
+Angst
+Crime
+Drama
+Supernatural
+Parody
+Western
+Humor
+Fanfiction
