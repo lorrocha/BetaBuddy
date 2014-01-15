@@ -14,7 +14,8 @@ feature 'The owner of a prose can edit his/her prose',%q{
 
   let(:molly) {FactoryGirl.create(:user)}
   let(:fanfic) {FactoryGirl.create(:prose, user_id:molly.id)}
-
+  let!(:old_genre) {FactoryGirl.create(:genre)}
+  let!(:horror) {FactoryGirl.create(:genre, name: 'Horror')}
   def sign_in(user)
     visit new_user_session_path
     fill_in "Email", with: user.email
@@ -35,6 +36,7 @@ feature 'The owner of a prose can edit his/her prose',%q{
 
     scenario 'can edit their page' do
       sign_in(molly)
+      FactoryGirl.create(:genre)
       visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
       click_on 'Edit'
 
@@ -42,6 +44,28 @@ feature 'The owner of a prose can edit his/her prose',%q{
       fill_in "Title", with: title
       click_button "Edit Prose"
       expect(page).to have_content(title)
+    end
+
+    scenario 'can change the genre of their prose if they did not have one' do
+      sign_in(molly)
+      visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
+      click_on 'Edit'
+
+      select horror.name, from: 'Genre'
+      click_button "Edit Prose"
+      expect(page).to have_content(horror.name)
+    end
+
+    scenario 'can change the genre of their prose if they did have one' do
+      sign_in(molly)
+      fanfic.prose_tags.build(genre_id: old_genre.id).save!
+      visit "/users/#{fanfic.user_id}/proses/#{fanfic.id}"
+      click_on 'Edit'
+
+      select horror.name, from: 'Genre'
+      click_button "Edit Prose"
+      expect(page).to have_content(horror.name)
+
     end
   end
 

@@ -1,9 +1,19 @@
 <div>
-  <% if current_user == @prose.user %>
-    <%= link_to 'Edit', edit_prose_path(@prose)%>
-    <%= link_to 'Delete', prose_path(@prose), method: :delete%>
-  <% else %>
-    <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
+  <% if user_signed_in? %>
+    <% if current_user == @prose.user %>
+      <%= link_to 'Edit', edit_prose_path(@prose)%>
+      <%= link_to 'Delete', prose_path(@prose), method: :delete%>
+    <% else %>
+      <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <h1><%= @prose.title %></h1>
+  <%= @prose.user.username %>
+  <% @prose.genres.each do |genre| %>
+    <%= genre.name %>
   <% end %>
 </div>
 
@@ -16,10 +26,6 @@
   <% end %>
 <div>
   <%= @prose.description %>
-</div>
-<div>
-  <h1><%= @prose.title %></h1>
-  <%= @prose.user.username %>
 </div>
 <div>
   <%= link_to 'Back', :back %>

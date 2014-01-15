@@ -12,9 +12,13 @@ class ProsesController < ApplicationController
   end
 
   def create
+    @genre_id = params['prose']['genres'].to_i
     @owner = current_user
     @prose = @owner.proses.build(prose_params)
     if @prose.save
+      if @genre_id
+        @prose.prose_tags.build(genre_id: @genre_id).save!
+      end
       redirect_to user_prose_path(@prose.user,@prose), notice: 'Your ink has been committed to paper.'
     else
       render :new
@@ -23,7 +27,6 @@ class ProsesController < ApplicationController
 
   def show
     @prose = Prose.find(params[:id])
-
     #params['prose'].nil? ? version = 1 : version = params['prose']['version'].to_i
     # this is failing because the version.id is returning, not the version.index. FIIX
     #@prose ||= @prose.versions[version].reify
@@ -41,11 +44,14 @@ class ProsesController < ApplicationController
   end
 
   def update
-    original_prose = @prose
     if @prose.update(prose_params)
+      @new_genre = params['prose']['genres'].to_i
       if is_owner?
-        redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "#{@prose.title} has been updated."
+        if @new_genre > 0
+          @prose.switch_genres(@new_genre)
+        end
         @prose.save
+        redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "#{@prose.title} has been updated."
       else
         @prose.save
         redirect_to "/users/#{@prose.user.id}/proses/#{@prose.id}", notice: "Your edits have been submitted. #{@prose.user.username} will be seeing them soon!"

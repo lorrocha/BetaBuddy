@@ -14,6 +14,7 @@ feature 'Authenticated User Can Upload Prose', %q{
   # * Save as a markdown file?
 
   let(:user) {FactoryGirl.create(:user)}
+  let!(:genre) {FactoryGirl.create(:genre)}
 
   def successful_login
     visit new_user_session_path
@@ -45,6 +46,18 @@ feature 'Authenticated User Can Upload Prose', %q{
       fill_in 'Story', with: 'Omg there is dragons and stuff'
       click_button 'Create Prose'
       expect(page).to have_content('Your ink has been committed to paper.')
+    end
+
+    it 'can be created with a genre' do
+      successful_login
+
+      visit 'proses/new'
+      fill_in 'Title', with: 'Best Title Ever'
+      fill_in 'Story', with: 'Omg there is dragons and stuff'
+      select genre.name, from: 'Genre'
+      click_button 'Create Prose'
+      expect(page).to have_content('Your ink has been committed to paper.')
+      expect(page).to have_content(genre.name)
     end
 
     it 'cannot be created without a description' do

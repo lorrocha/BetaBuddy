@@ -4,6 +4,7 @@
   <%= f.input :title %>
   <%= f.input :description, label: 'Story' %>
   <% if current_user == @prose.user %>
+    <%= f.input :genres, collection: Genre.all %>
     <%= f.submit "Edit Prose" %>
   <% else %>
     <%= f.submit "Submit Review" %>

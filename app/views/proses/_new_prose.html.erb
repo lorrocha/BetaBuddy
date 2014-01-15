@@ -3,6 +3,7 @@
 
   <%= f.input :title %>
   <%= f.input :description, label: 'Story' %>
+  <%= f.input :genres, collection: Genre.all %>
 
   <%= f.submit %>
 
