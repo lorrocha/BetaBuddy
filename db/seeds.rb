@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+require 'csv'
 datafile = Rails.root + "db/data/genres.txt"
 
 File.open(datafile, "r").each_line do |line|
@@ -13,5 +13,18 @@ File.open(datafile, "r").each_line do |line|
   Genre.find_or_initialize_by(name: genre) do |g|
     g.name = genre
     g.save!
+  end
+end
+
+quotesdata = Rails.root+ "db/data/quotes.csv"
+
+CSV.foreach(quotesdata, headers:true) do |row|
+  author = row['author']
+  quote = row['quotes']
+
+  Quote.find_or_initialize_by(description: quote) do |q|
+    q.author = author
+    q.description = quote
+    q.save!
   end
 end
