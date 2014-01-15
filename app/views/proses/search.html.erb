@@ -1,6 +1,7 @@
 
 <%= simple_form_for :search, url: search_path, html: { method: :get, id: 'prose_search' } do |f| %>
   <%= f.input :search, :required => false %>
+  <%= f.input :genre, collection: Genre.all.order(:name), :required => false %>
   <%= f.button :submit, "Search" %>
 <% end %>
 <div id="proses_content">

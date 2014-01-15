@@ -28,7 +28,7 @@ describe Prose do
     FactoryGirl.create(:prose)
     prose = FactoryGirl.create(:prose, title:tester)
 
-    expect(Prose.search(tester).count).to eql(1)
+    expect(Prose.search(tester, nil).count).to eql(1)
   end
 
 end

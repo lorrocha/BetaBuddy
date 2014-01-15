@@ -14,12 +14,13 @@ class Prose < ActiveRecord::Base
     @work = versions.map {|v| {user_id:v.whodunnit, desc:v.reify.description} unless v.event == 'create'}
   end
 
-  def self.search(item)
+  def self.search(item, filter)
     if item
-      joins('LEFT OUTER JOIN users ON proses.user_id = users.id').where('users.username LIKE ? OR title LIKE ?', "%#{item}%", "%#{item}%")
+      @search = joins('LEFT OUTER JOIN users ON proses.user_id = users.id').where('users.username LIKE ? OR title LIKE ?', "%#{item}%", "%#{item}%")
     else
-      all
+      @search = all
     end
+    self.filter(filter)
   end
 
   def switch_genres(id)
@@ -28,6 +29,15 @@ class Prose < ActiveRecord::Base
     else
       tag = prose_tags.first
       prose_update(tag, id)
+    end
+  end
+
+  def self.filter(id)
+    if id
+      #@search.joins('LEFT OUTER JOIN prose_tags ON proses.id = prose_tags.prose_id').joins('LEFT OUTER JOIN genres ON prose_tags.genre_id = genres.id').where('genre.id = ?', id)
+      @search.joins('LEFT OUTER JOIN prose_tags ON proses.id = prose_tags.prose_id').joins('LEFT OUTER JOIN genres ON prose_tags.genre_id = genres.id').where('genres.id = ?', id)
+    else
+      @search
     end
   end
 
@@ -40,6 +50,10 @@ class Prose < ActiveRecord::Base
   def prose_update(tag, id)
     tag.update(genre_id:id)
     tag.save!
+  end
+
+  def filter(id)
+    binding.pry
   end
 
 end

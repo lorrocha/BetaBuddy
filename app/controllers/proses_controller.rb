@@ -64,10 +64,15 @@ class ProsesController < ApplicationController
   def search
     if params[:search]
       search_params = params[:search][:search]
+      if params[:search][:genre].to_i > 0
+        filter_id = params[:search][:genre].to_i
+      else
+        filter_id = nil
+      end
     else
       search_params = nil
     end
-    @proses = Prose.search(search_params).paginate(:page => params[:page], :per_page => 20)
+    @proses = Prose.search(search_params, filter_id).paginate(:page => params[:page], :per_page => 20)
   end
 
   private
