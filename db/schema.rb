@@ -78,4 +78,9 @@ ActiveRecord::Schema.define(version: 20140115230357) do
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
+  create_table "welcomes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

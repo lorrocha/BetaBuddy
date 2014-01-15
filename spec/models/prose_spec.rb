@@ -5,9 +5,6 @@ describe Prose do
   it {should have_valid(:user_id).when(FactoryGirl.create(:user))}
   it {should have_valid(:description).when('do you believe in a thing called love?', 'I dreamed a dream')}
   it {should_not have_valid(:description).when(nil, '')}
-  it {should have_valid(:current_state).when('1', '2343535', 23)}
-  it {should_not have_valid(:current_state).when(nil, 'love', '')}
-
   #relationship tests
   it {should have_many(:prose_tags)}
   it {should have_many(:genres)}
@@ -55,6 +52,13 @@ describe Prose do
     expect(Prose.search(title, nil).count).to eql(2)
     expect(Prose.search(nil, genre1.id).count).to eql(2)
     expect(Prose.search(title, genre1.id).count).to eql(1)
+  end
+
+  it 'can return a randomized prose element' do
+    Prose.destroy_all
+    prose
+
+    expect(Prose.random_prose).to eql(prose)
   end
 
 end

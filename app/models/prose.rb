@@ -1,5 +1,4 @@
 class Prose < ActiveRecord::Base
-  validates_numericality_of :current_state, :only_integer=>true
   validates_presence_of :description
 
   has_many :prose_tags,
@@ -39,6 +38,10 @@ class Prose < ActiveRecord::Base
     else
       @search
     end
+  end
+
+  def self.random_prose
+    all.shuffle.pop
   end
 
   private
