@@ -1,8 +1,9 @@
-html, body{
+html body{
   background-image: url('baby-blue-wallpaper.png');
 
   .top-bar {
     border-radius: 20px;
+    background-color:#333;
 
     .name h1 {
       font-size:1.2em;
@@ -27,9 +28,33 @@ html, body{
   }
 }
 
+#sidenavbar {
+  border:red 2px solid;
+  top:0px;
+  height:100%;
+  width: 18%;
+  position:fixed;
+  float:left;
+  background-color:#333;
+}
+
+.side-nav li a {
+  color:white;
+}
+
 @media only screen and (max-width: 640px) {
   html body .top-bar-section {
     margin-right:0%;
+  }
+}
+
+@media only screen and (min-width: 820px) {
+  html body .top-bar {
+    display:none;
+  }
+
+  #body-content {
+    float:right;
   }
 }
 
