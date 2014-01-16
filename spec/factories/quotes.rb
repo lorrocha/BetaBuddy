@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :quote do
-    author "MyString"
-    description "MyString"
+    author "Me"
+    description "I'm awesome"
   end
 end

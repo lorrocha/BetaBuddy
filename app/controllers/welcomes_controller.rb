@@ -1,5 +1,5 @@
 class WelcomesController < ApplicationController
   def index
-    @quote = Welcome.quotes.sample
+    @quote = Quote.random
   end
 end

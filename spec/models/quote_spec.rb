@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Quote do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'gives you a random quote!' do
+    quote = FactoryGirl.create(:quote)
+    expect(Quote.random).to eql(quote)
+  end
 end

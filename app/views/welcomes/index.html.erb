@@ -1,7 +1,5 @@
 Blah blah blah
 
 <div>
-<% @quote.each do |guy, quote| %>
-  <%= "#{quote} - #{guy}" %>
-<% end %>
+  <%= "#{@quote.description} - #{@quote.author}" unless @quote.nil? %>
 </div>
