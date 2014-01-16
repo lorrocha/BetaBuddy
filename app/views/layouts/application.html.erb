@@ -58,21 +58,12 @@
       </ul>
     </section>
   </nav>
-
-<!--     <% if user_signed_in? %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      <%= link_to 'New Story', new_prose_path %>
-    <% else%>
-      <%= link_to 'Sign In', new_user_session_path %>
-      <%= link_to 'Sign Up!', new_user_registration_path %>
-    <% end %>
-    <% prose = Prose.random_prose %>
-    <%= link_to 'Feeling Lucky?', user_prose_path(prose.user, prose) unless prose.nil? %>
- -->
+  <div id="body-content">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+  </div>
   </body>
 </html>

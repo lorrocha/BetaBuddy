@@ -2,13 +2,12 @@
 
 /* Small Screens */
 @media only screen {
-  .name h1 {
-    font-family: 'Love Ya Like A Sister', cursive;
-  }
 
   #quote-body {
     font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 1em;
+    font-size: .7em;
+    text-align:center;
+    line-height:1em;
     transition-property: font-size;
     transition-duration:3s;
     -webkit-transition: width 3s; /* Safari */
@@ -22,9 +21,10 @@
   }
 
   #home-pic {
-    padding-bottom:5%;
+    margin-top:15%;
+    margin-bottom:15%;
+    border-radius: 90px;
   }
-
 }
 
 @media only screen and (max-width: 40em) {
@@ -38,23 +38,15 @@
 }
 
 /* Medium screens */
-@media only screen and (min-width: 40em) and (max-width: 40.063em) {
-  #quote-body {
-    font-size: 1.5em;
-  }
 
-  #quote-author {
-    font-size:1.3em;
-  }
-}
 
 @media only screen and (min-width: 40.063em) {
   #quote-body {
-    font-size: 1.7em;
+    font-size: 1.8em;
   }
 
   #quote-author {
-    font-size:1.7em;
+    font-size:1.8em;
   }
 }
 
