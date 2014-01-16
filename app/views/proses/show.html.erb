@@ -1,0 +1,33 @@
+<div>
+  <% if user_signed_in? %>
+    <% if current_user == @prose.user %>
+      <%= link_to 'Edit', edit_prose_path(@prose)%>
+      <%= link_to 'Delete', prose_path(@prose), method: :delete%>
+    <% else %>
+      <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <h1><%= @prose.title %></h1>
+  <%= @prose.user.username %>
+  <% @prose.genres.each do |genre| %>
+    <%= genre.name %>
+  <% end %>
+</div>
+
+  <% unless @prose.versions.nil?%>
+    <% @prose.all_versions.each do |version| %>
+      <div>
+        <%= version[:desc] unless version.nil?%>
+      </div>
+    <% end %>
+  <% end %>
+<div>
+  <%= @prose.description %>
+</div>
+<div>
+  <%= link_to 'Back', :back %>
+</div>
+

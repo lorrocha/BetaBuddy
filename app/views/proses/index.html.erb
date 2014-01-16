@@ -1,0 +1,5 @@
+<% @user.proses.each do |prose|%>
+  <div>
+    <%= link_to prose.title,user_prose_path(@user, prose) %>
+  </div>
+<% end %>

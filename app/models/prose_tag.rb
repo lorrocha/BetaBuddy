@@ -1,7 +1,4 @@
 class ProseTag < ActiveRecord::Base
-  validates_numericality_of :prose_id, :only_integer=>true
-  validates_numericality_of :genre_id, :only_integer=>true
-
-  belongs_to :genre
-  belongs_to :prose
+  belongs_to :genre, inverse_of: :prose_tags
+  belongs_to :prose, inverse_of: :prose_tags
 end

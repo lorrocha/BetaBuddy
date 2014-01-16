@@ -1,0 +1,10 @@
+<%= simple_form_for @prose do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :title %>
+  <%= f.input :description, label: 'Story' %>
+  <%= f.input :genres, collection: Genre.all.order(:name) %>
+
+  <%= f.submit %>
+
+<% end %>
