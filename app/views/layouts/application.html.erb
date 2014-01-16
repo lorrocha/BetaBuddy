@@ -1,27 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BetaBuddy</title>
-  <%= stylesheet_link_tag    "application", media: "all"%>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-  <%= link_to 'New Story', new_prose_path %>
-<% else%>
-  <%= link_to 'Sign In', new_user_session_path %>
-  <%= link_to 'Sign Up!', new_user_registration_path %>
-<% end %>
-<% prose = Prose.random_prose %>
-<%= link_to 'Feeling Lucky?', user_prose_path(prose.user, prose) unless prose.nil? %>
+    <title><%= content_for?(:title) ? yield(:title) : "" %>BetaBuddy</title>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'>
+  </head>
 
-<%= yield %>
+  <body>
+    <% prose = Prose.random_prose %>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to 'BetaBuddy', root_path %></h1>
+      </li>
+      <li class="toggle-topbar menu-icon">
+        <a href=>Menu</a>
+      </li>
+    </ul>
 
-</body>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="active">
+          <%= link_to 'Feeling Lucky?', user_prose_path(prose.user, prose) unless prose.nil? %>
+        </li>
+        <li class="divider"></li>
+        <li class="active">
+          <%= link_to 'Search', search_path %>
+        </li>
+        <li class="divider"></li>
+        <li class="active">
+          <% if user_signed_in? %>
+            <%= link_to 'New Story', new_prose_path %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li class="active">
+          <% if user_signed_in? %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Sign In', new_user_session_path %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li class="active">
+          <% unless user_signed_in? %>
+            <%= link_to 'Sign Up!', new_user_registration_path %>
+          <% end %>
+        </li>
+      </ul>
+    </section>
+  </nav>
+
+<!--     <% if user_signed_in? %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <%= link_to 'New Story', new_prose_path %>
+    <% else%>
+      <%= link_to 'Sign In', new_user_session_path %>
+      <%= link_to 'Sign Up!', new_user_registration_path %>
+    <% end %>
+    <% prose = Prose.random_prose %>
+    <%= link_to 'Feeling Lucky?', user_prose_path(prose.user, prose) unless prose.nil? %>
+ -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
