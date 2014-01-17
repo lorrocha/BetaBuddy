@@ -29,18 +29,31 @@ html body{
 }
 
 #sidenavbar {
-  border:red 2px solid;
   top:0px;
   height:100%;
-  width: 18%;
+  width: 200px;
   position:fixed;
   float:left;
   background-color:#333;
+  display:none;
+
+  .side-nav li.active > a:first-child {
+    color:white;
+    font-family: 'Marvel', sans-serif;
+    font-size:1.4em;
+    text-align:center;
+  }
+
+  #side-logo {
+    margin-top:100px;
+    margin-left:50px;
+  }
+
+  #side-logo-name {
+    font-size:1.4em;
+  }
 }
 
-.side-nav li a {
-  color:white;
-}
 
 @media only screen and (max-width: 640px) {
   html body .top-bar-section {
@@ -53,8 +66,12 @@ html body{
     display:none;
   }
 
+  #sidenavbar {
+    display:block;
+  }
+
   #body-content {
-    float:right;
+    padding-left:20%;
   }
 }
 

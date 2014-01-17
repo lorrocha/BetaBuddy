@@ -59,12 +59,34 @@
     </section>
   </nav>
   <div id="sidenavbar">
-    <ul class="four side-nav">
-      <li class="active"><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Link 3</a></li>
-      <li><a href="#">Link 4</a></li>
+    <%= link_to(image_tag('lj_Scott.gif',id: "side-logo"), root_path) %>
+    <ul class="five side-nav">
+      <li class="active" id="side-logo-name">
+        <%= link_to 'BetaBuddy', root_path %>
+      </li>
+      <li class="active">
+        <% unless user_signed_in? %>
+            <%= link_to 'Sign Up!', new_user_registration_path %>
+        <% end %>
+      </li>
+      <li class="active">
+        <% if user_signed_in? %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Sign In', new_user_session_path %>
+        <% end %>
+      </li>
+      <li class="active">
+        <% if user_signed_in? %>
+            <%= link_to 'New Story', new_prose_path %>
+        <% end %>
+      </li>
+      <li class="active">
+        <%= link_to 'Search', search_path %>
+      </li>
+      <li class="active">
+        <%= link_to 'Feeling Lucky?', user_prose_path(prose.user, prose) unless prose.nil? %>
+      </li>
     </ul>
   </div>
   <div id="body-content">
