@@ -4,6 +4,8 @@ html body{
   .top-bar {
     border-radius: 20px;
     background-color:#333;
+    margin-top: 0px;
+    transition: 0.7s;
 
     .name h1 {
       font-size:1.2em;
@@ -26,6 +28,14 @@ html body{
       font-size:1.2em;
     }
   }
+
+  #body-content .row #alerts {
+    text-align:center;
+    color:red;
+    margin-top: 10px;
+    font-family: 'Love Ya Like A Sister', cursive;
+  }
+
 }
 
 #sidenavbar {
@@ -35,7 +45,8 @@ html body{
   position:fixed;
   float:left;
   background-color:#333;
-  display:none;
+  margin-left: -200px;
+  transition: 0.7s;
 
   .side-nav li.active > a:first-child {
     color:white;
@@ -63,15 +74,17 @@ html body{
 
 @media only screen and (min-width: 820px) {
   html body .top-bar {
-    display:none;
+    margin-top: -47px;
   }
 
-  #sidenavbar {
-    display:block;
+  #sidenavbar{
+    margin-left: 0px;
   }
 
   #body-content {
     padding-left:20%;
   }
 }
+
+
 

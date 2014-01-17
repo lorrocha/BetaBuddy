@@ -58,7 +58,7 @@
       </ul>
     </section>
   </nav>
-  <div id="sidenavbar">
+  <div id="sidenavbar" class="slideInLeft">
     <%= link_to(image_tag('lj_Scott.gif',id: "side-logo"), root_path) %>
     <ul class="five side-nav">
       <li class="active" id="side-logo-name">
@@ -90,8 +90,12 @@
     </ul>
   </div>
   <div id="body-content">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="row">
+      <div class="small-6 small-centered columns" id="alerts">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
