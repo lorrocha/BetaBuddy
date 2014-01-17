@@ -9,7 +9,7 @@ feature "A viewer can register to authenticate", %{
 
   def successful_login
     visit root_path
-    click_link 'Sign In'
+    first(:link, "Sign In").click
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
@@ -40,7 +40,7 @@ feature "A viewer can register to authenticate", %{
 
     it 'has the wrong password' do
       visit root_path
-      click_link 'Sign In'
+      first(:link, "Sign In").click
 
       fill_in 'Email', with: user.email
       fill_in 'Password', with: 'bloop'
@@ -50,7 +50,7 @@ feature "A viewer can register to authenticate", %{
 
     it 'has the wrong email' do
       visit root_path
-      click_link 'Sign In'
+      first(:link, "Sign In").click
 
       fill_in 'Email', with: 'user.email344'
       fill_in 'Password', with: user.password

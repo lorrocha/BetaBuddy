@@ -1413,28 +1413,6 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/welcomes_controller.rb": [
-        1,
-        1,
-        31,
-        null,
-        null
-      ],
-      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        51,
-        null,
-        null
-      ],
       "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/proses_controller.rb": [
         1,
         1,
@@ -1532,6 +1510,28 @@
         null,
         null
       ],
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        51,
+        null,
+        null
+      ],
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/welcomes_controller.rb": [
+        1,
+        1,
+        31,
+        null,
+        null
+      ],
       "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/contacts_controller.rb": [
         1,
         1,
@@ -1589,6 +1589,6 @@
         null
       ]
     },
-    "timestamp": 1389974109
+    "timestamp": 1389977204
   }
 }
