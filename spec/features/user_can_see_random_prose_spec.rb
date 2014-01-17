@@ -16,7 +16,7 @@ feature 'A user can be linked to a random prose', %q{
 
   scenario 'Upon clicking on the button, they are taken to the random prose' do
     visit root_path
-    click_link 'Feeling Lucky?'
+    first(:link, 'Feeling Lucky?').click
 
     expect(page).to have_content(prose.title)
     expect(page).to have_content(prose.description)

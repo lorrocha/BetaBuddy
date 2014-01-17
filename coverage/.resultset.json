@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/environment.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/application.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/application.rb": [
         1,
         null,
         null,
@@ -39,13 +39,13 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/boot.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/environments/test.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/environments/test.rb": [
         1,
         null,
         null,
@@ -83,7 +83,7 @@
         1,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/backtrace_silencers.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -92,7 +92,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/devise.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -348,13 +348,13 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/filter_parameter_logging.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/inflections.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -372,14 +372,14 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/mime_types.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/secret_token.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -393,12 +393,12 @@
         null,
         1
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/session_store.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/wrap_parameters.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -414,7 +414,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/contacts.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/contacts.rb": [
         null,
         null,
         1,
@@ -427,7 +427,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/genres.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/genres.rb": [
         null,
         null,
         1,
@@ -436,28 +436,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/prose_tags.rb": [
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/proses.rb": [
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/quotes.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/prose_tags.rb": [
         null,
         null,
         1,
@@ -467,7 +446,28 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/users.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/proses.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/quotes.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/factories/users.rb": [
         null,
         null,
         1,
@@ -481,7 +481,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/routes.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/config/routes.rb": [
         1,
         1,
         1,
@@ -553,7 +553,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/user.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/user.rb": [
         1,
         null,
         null,
@@ -572,11 +572,11 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/helpers/application_helper.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/authenticated_user_can_upload_prose_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/authenticated_user_can_upload_prose_spec.rb": [
         1,
         null,
         1,
@@ -664,7 +664,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/user_can_destroy_own_work_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/user_can_destroy_own_work_spec.rb": [
         1,
         null,
         1,
@@ -706,7 +706,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/user_can_edit_a_prose_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/user_can_edit_a_prose_spec.rb": [
         1,
         null,
         1,
@@ -808,7 +808,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/user_can_search_for_proses_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/prose_features/user_can_search_for_proses_spec.rb": [
         1,
         null,
         1,
@@ -883,7 +883,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/site_staff_recieves_an_email_when_contacted_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/site_staff_recieves_an_email_when_contacted_spec.rb": [
         1,
         null,
         1,
@@ -948,7 +948,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/user_can_register_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/user_can_register_spec.rb": [
         1,
         null,
         1,
@@ -1011,7 +1011,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/user_can_see_random_prose_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/user_can_see_random_prose_spec.rb": [
         1,
         null,
         1,
@@ -1037,7 +1037,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/user_can_sign_in_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/user_can_sign_in_spec.rb": [
         1,
         null,
         1,
@@ -1101,7 +1101,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/visitor_can_submit_contact_form_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/visitor_can_submit_contact_form_spec.rb": [
         1,
         null,
         1,
@@ -1137,7 +1137,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/contact_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/contact_spec.rb": [
         1,
         null,
         1,
@@ -1161,7 +1161,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/contact.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/contact.rb": [
         1,
         1,
         1,
@@ -1170,7 +1170,7 @@
         1,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/genre_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/genre_spec.rb": [
         1,
         null,
         1,
@@ -1193,7 +1193,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/genre.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/genre.rb": [
         1,
         1,
         null,
@@ -1204,7 +1204,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/prose_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/prose_spec.rb": [
         1,
         null,
         1,
@@ -1270,7 +1270,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/prose.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/prose.rb": [
         1,
         1,
         null,
@@ -1334,7 +1334,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/prose_tag_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/prose_tag_spec.rb": [
         1,
         null,
         1,
@@ -1370,13 +1370,13 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/prose_tag.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/prose_tag.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/quote_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/quote_spec.rb": [
         1,
         null,
         1,
@@ -1386,7 +1386,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/quote.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/models/quote.rb": [
         1,
         null,
         1,
@@ -1394,7 +1394,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/user_spec.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -1413,29 +1413,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        51,
-        null,
-        null
-      ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/welcomes_controller.rb": [
-        1,
-        1,
-        31,
-        null,
-        null
-      ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/proses_controller.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/proses_controller.rb": [
         1,
         1,
         1,
@@ -1532,7 +1510,29 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/contacts_controller.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        51,
+        null,
+        null
+      ],
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/welcomes_controller.rb": [
+        1,
+        1,
+        31,
+        null,
+        null
+      ],
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/contacts_controller.rb": [
         1,
         1,
         1,
@@ -1568,7 +1568,7 @@
         null,
         null
       ],
-      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/mailers/viewer_contacts.rb": [
+      "/Users/lorraynerocha/dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/mailers/viewer_contacts.rb": [
         1,
         1,
         null,
@@ -1589,6 +1589,6 @@
         null
       ]
     },
-    "timestamp": 1389830661
+    "timestamp": 1389977204
   }
 }

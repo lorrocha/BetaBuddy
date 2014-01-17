@@ -5,6 +5,6 @@
   <%= f.input :description, label: 'Story' %>
   <%= f.input :genres, collection: Genre.all.order(:name) %>
 
-  <%= f.submit %>
+  <%= f.button :submit %>
 
 <% end %>

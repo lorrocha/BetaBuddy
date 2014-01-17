@@ -1,0 +1,49 @@
+
+
+/* Small Screens */
+@media only screen {
+
+  #quote-body {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: .7em;
+    text-align:center;
+    line-height:1em;
+  }
+
+  #quote-author {
+    text-align: right;
+    font-family: 'Marvel', sans-serif;
+    font-size:1em;
+    padding-right:7%;
+  }
+
+  #home-pic {
+    margin-top:15%;
+    margin-bottom:15%;
+    border-radius: 90px;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  #quote-body {
+    font-size: 1.3em;
+  }
+
+  #quote-author {
+    font-size:1.1em;
+  }
+}
+
+/* Medium screens */
+
+
+@media only screen and (min-width: 40.063em) {
+  #quote-body {
+    font-size: 1.8em;
+  }
+
+  #quote-author {
+    font-size:1.8em;
+  }
+}
+
