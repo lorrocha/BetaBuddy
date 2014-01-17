@@ -1,21 +1,31 @@
 <div class="row">
-  <div class="small-9 small-centered columns">
-    <div>
-      <% if user_signed_in? %>
-        <% if current_user == @prose.user %>
-          <%= link_to 'Edit', edit_prose_path(@prose)%>
-          <%= link_to 'Delete', prose_path(@prose), method: :delete%>
-        <% else %>
-          <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
+  <div class="small-9 small-centered columns" id="story-canvas">
+    <div class="row">
+      <div id="edit-links">
+        <% if user_signed_in? %>
+          <% if current_user == @prose.user %>
+            <ul class="button-group round">
+              <li class="button small"><%= link_to 'Edit', edit_prose_path(@prose)%></li>
+              <li class="button small"><%= link_to 'Delete', prose_path(@prose), method: :delete%></li>
+            </ul>
+          <% else %>
+            <div class="button small">
+              <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
 
     <div>
       <h1><%= @prose.title %></h1>
-      <%= @prose.user.username %>
+        <div class="prose-user">
+          By <%= @prose.user.username %>
+        </div>
       <% @prose.genres.each do |genre| %>
-        <%= genre.name %>
+        <div class="prose-genre">
+          <%= genre.name %>
+        </div>
       <% end %>
     </div>
 
