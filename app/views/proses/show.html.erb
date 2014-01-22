@@ -30,17 +30,44 @@
     </div>
 
       <% unless @prose.versions.nil?%>
-        <% @prose.all_versions.each do |version| %>
-          <div>
-            <%= version[:desc] unless version.nil?%>
-          </div>
-        <% end %>
+        <!-- Adding the Tab Version name -->
+        <dl class="tabs">
+          <% @prose.versions.each_with_index do |key, index| %>
+            <dd><a href="#version<%= index+1%>">Version <%= index+1%></a></dd>
+          <% end %>
+        </dl>
+        <!-- Adding the actual content, hidden beneath things -->
+        <div class="tabs-content">
+          <% @prose.all_versions.each_with_index do |version, index| %>
+            <% unless version.nil? %>
+              <div class="content" id="version<%= index%>"><%= version[:desc]%></div>
+            <% end %>
+          <% end %>
       <% end %>
-    <div>
-      <%= @prose.description %>
-    </div>
+          <div class='content active' id="version<%= @prose.versions.count%>"><%= @prose.description %></div>
+        </div>
     <div>
       <%= link_to 'Back', :back %>
     </div>
+  </div>
+</div>
+<dl class="tabs" data-tab>
+  <dd class="active"><a href="#panel2-1">Tab 1</a></dd>
+  <dd><a href="#panel2-2">Tab 2</a></dd>
+  <dd><a href="#panel2-3">Tab 3</a></dd>
+  <dd><a href="#panel2-4">Tab 4</a></dd>
+</dl>
+<div class="tabs-content">
+  <div class="content active" id="panel2-1">
+    <p>First panel content goes here...</p>
+  </div>
+  <div class="content" id="panel2-2">
+    <p>Second panel content goes here...</p>
+  </div>
+  <div class="content" id="panel2-3">
+    <p>Third panel content goes here...</p>
+  </div>
+  <div class="content" id="panel2-4">
+    <p>Fourth panel content goes here...</p>
   </div>
 </div>
