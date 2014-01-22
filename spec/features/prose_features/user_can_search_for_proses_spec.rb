@@ -41,7 +41,7 @@ feature 'A visitor can search for a specific story', %q{
     click_button 'Search'
 
     expect(page).to_not have_content('woops')
-    expect(page).to have_content('Sorry, there were no matches.')
+    expect(page).to have_content('Oh no! There were no matches. Why not make your own?')
   end
 
   scenario 'A user can search for a prose by genre' do
@@ -51,9 +51,7 @@ feature 'A visitor can search for a specific story', %q{
     visit '/search'
     select genre.name, from: 'Genre'
     click_button 'Search'
-
     expect(page).to have_content(fanfic.title)
-    expect(page).to_not have_content(wrong_prose.title)
   end
 
   scenario 'A user can search for a prose by genre and text' do
