@@ -29,6 +29,10 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <li class="active">
+          <%= link_to 'Members', users_path %>
+        </li>
+        <li class="divider"></li>
+        <li class="active">
           <%= link_to 'Feeling Lucky?', user_prose_path(prose.user, prose) unless prose.nil? %>
         </li>
         <li class="divider"></li>
@@ -87,6 +91,9 @@
       </li>
       <li class="active">
         <%= link_to 'Feeling Lucky?', user_prose_path(prose.user, prose) unless prose.nil? %>
+      </li>
+      <li class="active">
+        <%= link_to 'Members', users_path %>
       </li>
     </ul>
   </div>

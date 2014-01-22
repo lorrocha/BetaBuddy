@@ -472,9 +472,9 @@
         null,
         1,
         1,
-        49,
+        51,
         1,
-        54,
+        56,
         1,
         1,
         1,
@@ -490,6 +490,8 @@
         1,
         1,
         null,
+        null,
+        1,
         null,
         1,
         null,
@@ -876,7 +878,7 @@
         1,
         null,
         1,
-        1,
+        null,
         null,
         null,
         null
@@ -1005,6 +1007,31 @@
         null,
         1,
         null,
+        null,
+        null,
+        null
+      ],
+      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/spec/features/user_can_see_memberlist_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        3,
+        3,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
         null,
         null,
         null
@@ -1312,7 +1339,7 @@
         null,
         null,
         1,
-        99,
+        104,
         null,
         null,
         1,
@@ -1388,7 +1415,7 @@
         1,
         null,
         1,
-        32,
+        34,
         null,
         null
       ],
@@ -1485,7 +1512,7 @@
       "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/welcomes_controller.rb": [
         1,
         1,
-        31,
+        33,
         null,
         null
       ],
@@ -1495,7 +1522,7 @@
         1,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -1585,8 +1612,15 @@
         null,
         null,
         null
+      ],
+      "/Users/lorraynerocha/Dropbox/launchacademy/Beta_Buddy/BetaBuddy/app/controllers/users_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null
       ]
     },
-    "timestamp": 1390426176
+    "timestamp": 1390430923
   }
 }

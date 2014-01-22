@@ -7,6 +7,8 @@ BetaBuddy::Application.routes.draw do
     resources :proses, only: [:show, :index]
   end
 
+  get '/users', to: 'users#index'
+
   resources :contacts, only: [:new, :create, :index, :show]
 
   resources :proses, except: [:show, :index]

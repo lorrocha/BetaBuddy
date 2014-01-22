@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="small-12 small-centered columns">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Last Signed In:</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user|%>
+          <tr>
+            <td><%= link_to user.username, user_proses_path(user) %></td>
+            <td><%= user.last_sign_in_at.strftime("%m/%d/%Y") unless user.last_sign_in_at.nil? %></td>
+            <td><%= user.about_me %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

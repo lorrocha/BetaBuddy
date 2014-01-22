@@ -9,7 +9,7 @@
               <li class="button small"><%= link_to 'Delete', prose_path(@prose), method: :delete%></li>
             </ul>
           <% else %>
-            <div class="button small">
+            <div class="button small round" id="beta-read-button">
               <%= link_to 'Beta-Read!', edit_prose_path(@prose)%>
             </div>
           <% end %>
