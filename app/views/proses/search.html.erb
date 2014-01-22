@@ -1,10 +1,12 @@
 <div class="row">
-  <div class="small-7 small-centered columns">
-    <%= simple_form_for :search, url: search_path, html: { method: :get, id: 'prose_search' } do |f| %>
-      <%= f.input :search, :required => false %>
-      <%= f.input :genre, collection: Genre.all.order(:name), :required => false %>
-      <%= f.button :submit, "Search" %>
-    <% end %>
+  <div class="small-10 small-centered columns">
+    <div class="row">
+      <%= simple_form_for :search, url: search_path, html: { method: :get, id: 'prose_search' } do |f| %>
+        <div class="medium-8 columns"><%= f.input :search, :required => false %></div>
+        <div class="medium-4 columns"><%= f.input :genre, collection: Genre.all.order(:name), :required => false %></div>
+    </div>
+        <%= f.button :submit, "Search" %>
+      <% end %>
     <div id="proses_content" class="search-results">
       <% if @proses.empty? %>
         <div class="no-matches">
