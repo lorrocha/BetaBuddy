@@ -1,20 +1,23 @@
-
-<%= simple_form_for :search, url: search_path, html: { method: :get, id: 'prose_search' } do |f| %>
-  <%= f.input :search, :required => false %>
-  <%= f.input :genre, collection: Genre.all.order(:name), :required => false %>
-  <%= f.button :submit, "Search" %>
-<% end %>
-<div id="proses_content">
-  <% if @proses.empty? %>
-    <div>
-      Sorry, there were no matches.
-    </div>
-  <% else %>
-    <% @proses.each do |prose| %>
-      <div>
-        <%= link_to prose.title, user_prose_path(prose.user ,prose) %>
-      </div>
+<div class="row">
+  <div class="small-7 small-centered columns">
+    <%= simple_form_for :search, url: search_path, html: { method: :get, id: 'prose_search' } do |f| %>
+      <%= f.input :search, :required => false %>
+      <%= f.input :genre, collection: Genre.all.order(:name), :required => false %>
+      <%= f.button :submit, "Search" %>
     <% end %>
-  <% end %>
-  <%= will_paginate @proses %>
+    <div id="proses_content" class="search-results">
+      <% if @proses.empty? %>
+        <div class="no-matches">
+          <span id="sorry">Oh no!</span> <p>There were no matches. Why not make your own?</p>
+        </div>
+      <% else %>
+        <% @proses.each do |prose| %>
+          <div class="search-links">
+            <%= link_to prose.title, user_prose_path(prose.user ,prose) %>
+          </div>
+        <% end %>
+      <% end %>
+      <%= will_paginate @proses %>
+    </div>
+  </div>
 </div>

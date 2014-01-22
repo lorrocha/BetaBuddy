@@ -1,9 +1,11 @@
 <%= simple_form_for @prose do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :title %>
+  <div class="row">
+    <div class="medium-6 columns"><%= f.input :title %></div>
+    <div class="medium-6 columns"><%= f.input :genres, collection: Genre.all.order(:name) %></div>
+  </div>
   <%= f.input :description, label: 'Story' %>
-  <%= f.input :genres, collection: Genre.all.order(:name) %>
 
   <%= f.button :submit %>
 

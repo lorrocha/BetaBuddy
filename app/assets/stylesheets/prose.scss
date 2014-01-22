@@ -18,3 +18,78 @@ html body .row #edit-links ul li {
 
 }
 
+/* Below this line is search page styling */
+html body .row {
+  .no-matches, p {
+    color:#333;
+    font-size:1.1em;
+    text-align:center;
+    font-family: 'Love Ya Like A Sister', cursive;
+  }
+
+  #sorry {
+    font-size:1.3em;
+  }
+
+  .search-results {
+    margin-top:30px;
+  }
+
+  .search-links {
+    font-family: 'Marvel', sans-serif;
+    font-size:1.3em;
+  }
+
+  label {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size:1.2em;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  html body .row {
+    .search-links {
+      font-size:1.5em;
+    }
+
+    #sorry {
+      font-size:1.6em;
+    }
+
+    p {
+      font-size:1.2em;
+    }
+  }
+}
+
+@media only screen and (min-width: 40.063em) {
+  html body .row {
+    .search-links {
+      font-size:2em;
+    }
+
+    #sorry {
+      font-size:2em;
+    }
+
+    p {
+      font-size:1.4em;
+    }
+  }
+}
+
+/* Below is styling for the edit and new page */
+
+html body .row {
+  #prose_description {
+    height:350px;
+  }
+}
+
+@media only screen and (min-width: 40.063em) {
+  html body .row {
+    #prose_description {
+      height:420px;
+    }
+  }
+}
