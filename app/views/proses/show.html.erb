@@ -4,7 +4,7 @@
       <span id="edit-links" class="small-4 columns">
         <% if user_signed_in? %>
           <% if current_user == @prose.user %>
-            <ul class="button-group round">
+            <ul class="button-group round" id="beta-edit button">
               <li class="button small"><%= link_to 'Edit', edit_prose_path(@prose)%></li>
               <li class="button small"><%= link_to 'Delete', prose_path(@prose), method: :delete%></li>
             </ul>
@@ -19,7 +19,7 @@
       <span id="select_form" class="small-5 columns">
         <%= simple_form_for :version, url: user_prose_path(@prose.user.id, @prose), html: { method: :get, id: 'version_select' } do |f| %>
           <div class="small-3" id="the-version"><%= f.input :version, collection: @prose.all_versions, :required => false %></div>
-          <div class="small-3"><%= f.button :submit %></div>
+          <div class="small-3"><%= f.button :submit, class:'round' %></div>
         <% end %>
       </span>
 
@@ -36,18 +36,12 @@
         </div>
       <% end %>
     </div>
-<!--       <div id="select_form">
-        <%= simple_form_for :version, url: user_prose_path(@prose.user.id, @prose), html: { method: :get, id: 'version_select' } do |f| %>
-          <div class="small-3"><%= f.input :version, collection: @prose.all_versions, :required => false %></div>
-          <div class="small-3"><%= f.button :submit %></div>
-        <% end %>
-      </div> -->
 
-    <div>
+    <div id="prose-story">
       <%= @story %>
     </div>
-    <div>
-      <%= link_to 'Back', :back %>
+    <div class="button round">
+      <span id="back-link"><%= link_to 'Back', :back %></span>
     </div>
   </div>
 </div>
