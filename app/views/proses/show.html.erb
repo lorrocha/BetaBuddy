@@ -36,7 +36,8 @@
         </div>
       <% end %>
     </div>
-    <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :space_after_headers => true, :no_links=> true) %>
+    <% renderer = Redcarpet::Render::HTML.new(:no_links => true, :hard_wrap => true, :space_after_headers => true,) %>
+    <% markdown = Redcarpet::Markdown.new(renderer,) %>
     <div id="prose-story">
       <%= raw markdown.render(@story) %>
     </div>
