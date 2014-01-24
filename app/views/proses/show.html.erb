@@ -36,9 +36,9 @@
         </div>
       <% end %>
     </div>
-
+    <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :space_after_headers => true, :no_links=> true) %>
     <div id="prose-story">
-      <%= @story %>
+      <%= raw markdown.render(@story) %>
     </div>
     <div class="button round">
       <span id="back-link"><%= link_to 'Back', :back %></span>

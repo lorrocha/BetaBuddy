@@ -136,6 +136,7 @@ GEM
     rake (10.1.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.0.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec-core (2.14.7)
@@ -221,6 +222,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.2)
   rails_12factor
+  redcarpet
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
