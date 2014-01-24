@@ -1,7 +1,7 @@
 <div class="row">
   <div class="small-9 small-centered columns" id="story-canvas">
     <div class="row">
-      <div id="edit-links">
+      <span id="edit-links" class="small-4 columns">
         <% if user_signed_in? %>
           <% if current_user == @prose.user %>
             <ul class="button-group round">
@@ -14,10 +14,18 @@
             </div>
           <% end %>
         <% end %>
-      </div>
+      </span>
+
+      <span id="select_form" class="small-5 columns">
+        <%= simple_form_for :version, url: user_prose_path(@prose.user.id, @prose), html: { method: :get, id: 'version_select' } do |f| %>
+          <div class="small-3" id="the-version"><%= f.input :version, collection: @prose.all_versions, :required => false %></div>
+          <div class="small-3"><%= f.button :submit %></div>
+        <% end %>
+      </span>
+
     </div>
 
-    <div>
+    <div id="prose-content">
       <h1><%= @prose.title %></h1>
         <div class="prose-user">
           By <%= @prose.user.username %>
@@ -28,11 +36,12 @@
         </div>
       <% end %>
     </div>
-
-      <%= simple_form_for :version, url: user_prose_path(@prose.user.id, @prose), html: { method: :get, id: 'version_select' } do |f| %>
-        <%= f.input :version, collection: @prose.all_versions, :required => false %>
-        <%= f.button :submit %>
-      <% end %>
+<!--       <div id="select_form">
+        <%= simple_form_for :version, url: user_prose_path(@prose.user.id, @prose), html: { method: :get, id: 'version_select' } do |f| %>
+          <div class="small-3"><%= f.input :version, collection: @prose.all_versions, :required => false %></div>
+          <div class="small-3"><%= f.button :submit %></div>
+        <% end %>
+      </div> -->
 
     <div>
       <%= @story %>

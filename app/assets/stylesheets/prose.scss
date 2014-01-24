@@ -55,6 +55,25 @@ html body .row {
   }
 }
 
+/* Below is show page styling*/
+
+#select_form {
+  margin-right:-140px;
+
+  #the-version{
+    margin-left:15px;
+  }
+
+  .button {
+    font-size:1.2em;
+    padding:5px 10px;
+  }
+}
+
+#prose-content {
+  margin-top:-50px;
+}
+
 @media only screen and (max-width: 40em) {
   html body .row {
     .search-links {
