@@ -27,6 +27,17 @@ class ProsesController < ApplicationController
 
   def show
     @prose = Prose.find(params[:id])
+
+    if params['version'].nil?
+      set_prose_description
+    else
+      story = params['version']['version']
+      if !@prose.versions.where(id:story.to_i).empty?
+          @prose.versions.find(story.to_i).event == 'create' ? set_prose_description : @story = @prose.versions.find(story.to_i).reify.description
+      else
+        set_prose_description
+      end
+    end
     #params['prose'].nil? ? version = 1 : version = params['prose']['version'].to_i
     # this is failing because the version.id is returning, not the version.index. FIIX
     #@prose ||= @prose.versions[version].reify
@@ -90,6 +101,10 @@ class ProsesController < ApplicationController
 
   def prose_params
     params.require(:prose).permit(:user_id,:title, :description, :current_state)
+  end
+
+  def set_prose_description
+    @story = @prose.description
   end
 
 end

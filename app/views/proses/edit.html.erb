@@ -11,9 +11,9 @@
 
       <%= f.input :description, label: 'Story' %>
       <% if current_user == @prose.user %>
-        <%= f.submit "Edit Prose", class:'button small' %>
+        <%= f.submit "Edit Prose", class:'button' %>
       <% else %>
-        <%= f.submit "Submit Review", class:'button small' %>
+        <%= f.submit "Submit Review", class:'button' %>
       <% end %>
 
     <% end %>

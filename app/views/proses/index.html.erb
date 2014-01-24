@@ -1,5 +1,22 @@
-<% @user.proses.each do |prose|%>
-  <div>
-    <%= link_to prose.title,user_prose_path(@user, prose) %>
+<div class="row">
+  <div class="small-12 small-centered columns">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Last Updated</th>
+          <th>Times Editted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.proses.each do |prose|%>
+          <tr>
+            <td><%= link_to prose.title,user_prose_path(@user, prose) %></td>
+            <td><%= prose.updated_at.strftime("%m/%d/%Y") %></td>
+            <td><%= prose.versions.nil? ? 1 : prose.versions.count + 1  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-<% end %>
+</div>

@@ -10,7 +10,11 @@ class Prose < ActiveRecord::Base
   has_paper_trail :on => [:update, :create]
 
   def all_versions
-    @work = versions.map {|v| {user_id:v.whodunnit, desc:v.reify.description} unless v.event == 'create'}
+    @proses = versions.map {|v| v unless v.event == 'create'}
+    @proses << self
+    proses_with_index = {}
+    @proses.compact.each_with_index {|v, i| proses_with_index[i] = v.id }
+    proses_with_index
   end
 
   def self.search(item, filter)
