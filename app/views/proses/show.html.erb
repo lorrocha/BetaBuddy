@@ -19,7 +19,7 @@
       <span id="select_form" class="small-5 columns">
         <%= simple_form_for :version, url: user_prose_path(@prose.user.id, @prose), html: { method: :get, id: 'version_select' } do |f| %>
           <div class="small-3" id="the-version"><%= f.input :version, collection: @prose.all_versions, :required => false %></div>
-          <div class="small-3"><%= f.button :submit, class:'round' %></div>
+          <div class="small-3"><%= f.button :submit, 'Select Version', class:'round' %></div>
         <% end %>
       </span>
 
