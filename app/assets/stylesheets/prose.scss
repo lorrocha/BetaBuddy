@@ -59,13 +59,16 @@ html body .row {
 /* Below is show page styling*/
 
 #select_form {
-/*  margin-right:-140px;
-  margin-top:5px;*/
+  display:inline;
+  margin-top:5px;
   margin-top:2%;
   float:right;
+  padding-right:1em;
 
   #the-version{
-    margin-left:15px;
+    margin-left:30px;
+    width:3em;
+
   }
 
   .button {
@@ -112,13 +115,17 @@ html body .row .button {
     p {
       font-size:1.2em;
     }
+
+    #select_form {
+      margin-right:2em;
+    }
   }
 }
 
 @media only screen and (min-width: 40.063em) {
   html body .row {
     .search-links {
-      font-size:2em;
+      font-size:4em;
     }
 
     #sorry {

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="small-9 small-centered columns" id="story-canvas">
     <div class="row">
-      <span id="edit-links" class="small-4 columns">
+      <div id="edit-links" class="small-4 columns">
         <% if user_signed_in? %>
           <% if current_user == @prose.user %>
             <ul class="button-group round" id="beta-edit button">
@@ -14,14 +14,14 @@
             </div>
           <% end %>
         <% end %>
-      </span>
+      </div>
 
-      <span id="select_form" class="small-5 columns">
+      <div id="select_form">
         <%= simple_form_for :version, url: user_prose_path(@prose.user.id, @prose), html: { method: :get, id: 'version_select' } do |f| %>
-          <div class="small-3" id="the-version"><%= f.input :version, collection: @prose.all_versions, :required => false %></div>
-          <div class="small-3"><%= f.button :submit, 'Select Version', class:'round' %></div>
+          <div id="the-version"><%= f.input :version, collection: @prose.all_versions, :required => false %></div>
+          <div><%= f.button :submit, 'Select Version', class:'round' %></div>
         <% end %>
-      </span>
+      </div>
 
     </div>
 
